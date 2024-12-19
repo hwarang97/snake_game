@@ -1,5 +1,5 @@
 ## Why can't variable be used when declaring an array?
-Unlike python, error occurs when I use variable in array. 
+Unlike python, error occurs when I use variable in array. Becuase C language declaration is performed in compile-time, it can't reference value in row, col memory. Value assingment to memory is performed in run-time. By contrast, python can declare array with variable cause it supports dynamic declaration. Cause python interpretes line by line, when array declaration line is executed, interpreter can access memory of variable.
 ```c
 int main()
 {
@@ -13,10 +13,9 @@ int main()
 ![image](https://github.com/user-attachments/assets/cb7f12ca-db44-4d94-a652-a9bc62f6c6e4)
 
 
-
 Solution   
 link: https://www.youtube.com/watch?v=5mUnnK_mNFs   
-Use macro instead of hard coding
+Use macro instead of variable
 
 ```c
 #include <stdio.h>
