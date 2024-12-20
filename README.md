@@ -28,12 +28,23 @@
 
 2. User input
    ---
-    - arrow key: move 
-    - p: pause
-    - esc: exit   
-    
-    User preeses arrow key to control snake. When user press 'p', game is paused. When user press 'esc', game is done.
+    |Key     |Action            | Game State                      |
+    | :----- | :--------------- | :------------------------------ |
+    |Up      |Snake moves up    |Change snake's direction to up   |
+    |Down    |Snake moves down  |Change snake's direction to down |
+    |left    |Snake moves left  |Change snake's direction to down |
+    |Right   |Snake moves right |Change snake's direction to right|
+    |p       |Pause the game    |Pause                            |
+    |esc     |Exit the game     |Exit                             |
 
+   Real time and Non blocking input
+   - Use kbhit(), _getch() function
+  
+   Restriction
+   - Can not move inverse direction (In up direction state, snake can't move down direction immediately)
+
+  Error handling
+  - 
     
 3. Game logic
    ---
