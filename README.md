@@ -25,7 +25,7 @@
    - If board[row][col] is not filled with ' ', re-select row, col until board[row][col] == ' '.
   
    Display Board
-   - make display_board function containg above utils.
+   - Make display_board function containg above utils.
 
 2. User input
    ---
