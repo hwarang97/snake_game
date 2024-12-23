@@ -9,7 +9,7 @@
    |o                 |snake's tail|           
   
    Board can be created by quadratic array.
-   - First and Last ros is filled with '#'.
+   - First and Last row is filled with '#'.
    - First and Last col is filled with '#'.
    - Other elements is filled with ' '.   
   
