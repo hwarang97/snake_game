@@ -25,7 +25,7 @@
    - If board[row][col] is not filled with ' ', re-select row, col until board[row][col] == ' '.
   
    Display Board
-   - make display_board function.
+   - make display_board function containg above utils.
 
 2. User input
    ---
@@ -43,9 +43,6 @@
   
    Restriction
    - Can not move inverse direction (In up direction state, snake can't move down direction immediately)
-
-  Error handling
-  - 
     
 3. Game logic
    ---
