@@ -8,7 +8,7 @@
    |@                 |snake's head|
    |o                 |snake's tail|           
   
-   Board can be created by quadratic array.
+   Board can be created by 2D array.
    - First and Last row is filled with '#'.
    - First and Last col is filled with '#'.
    - Other elements is filled with ' '.   
@@ -22,6 +22,7 @@
    Feed is randomly created in board.
    - Select random row, col by random library.
    - Feed is not created on wall, snake. Check board[row][col] == ' '.
+   - If board[row][col] is not filled with ' ', re-select row, col until board[row][col] == ' '.
   
    Display Board
    - make display_board function.
