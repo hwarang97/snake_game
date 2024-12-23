@@ -1,5 +1,5 @@
 # Requirements
-1. Display
+Display
    ---
    |Symbol            |Description |
    | :--------------- | :--------- |
@@ -27,16 +27,16 @@
    Display Board
    - Make display_board function containg above utils.
 
-2. User input
+User input
    ---
-    |Key     |Action            | Game State                      |
-    | :----- | :--------------- | :------------------------------ |
-    |Up      |Snake moves up    |Change snake's direction to up   |
-    |Down    |Snake moves down  |Change snake's direction to down |
-    |left    |Snake moves left  |Change snake's direction to down |
-    |Right   |Snake moves right |Change snake's direction to right|
-    |p       |Pause the game    |Pause                            |
-    |esc     |Exit the game     |Exit                             |
+ |Key     |Action            | Game State                      |
+ | :----- | :--------------- | :------------------------------ |
+ |Up      |Snake moves up    |Change snake's direction to up   |
+ |Down    |Snake moves down  |Change snake's direction to down |
+ |left    |Snake moves left  |Change snake's direction to down |
+ |Right   |Snake moves right |Change snake's direction to right|
+ |p       |Pause the game    |Pause                            |
+ |esc     |Exit the game     |Exit                             |
 
    Real time and Non blocking input
    - Use kbhit(), _getch() function
@@ -44,7 +44,7 @@
    Restriction
    - Can not move inverse direction (In up direction state, snake can't move down direction immediately)
     
-3. Game logic
+Game logic
    ---
    Snake Move
    - Arrow key input updates direction (UP, DOWN, LEFT, RIGHT).
