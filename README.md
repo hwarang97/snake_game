@@ -48,13 +48,27 @@
     
 3. Game logic
    ---
-    - snake move
-    - collision
-    - grow
-    - speed up
-    - score
+   Snake Move
+   - Arrow key input updates direction (UP, DOWN, LEFT, RIGHT).
+   - If no input, snake moves in the current direction.
+   - Update snake's head position based on the current direction.
+   - Snake's body and tail follow the head.
+  
+   Coliision
+   - If snake's head collides with wall(#), the game ends.
+   - If snake's head collides with its body(o), the game ends.
 
-Snake moving direction is depends on pressed arrow key. If there is no arrow key input, snake keeps going one direction. When snake have feed, snake is longer, speed up and score is counted. When snake encounters with self or wall, game is over.
+   Grow
+   - When snake eats feed(0), its length increases.
+   - A new tail is added to the last tail.
+
+   Speed Up
+   - Game speed increases with each feed eaten.
+   - Delay time decreases as score inceases, with a minimum threshold.
+
+   Score
+   - Each feed eaten adds 10 points to the score.
+   - Final score is displayed at the end of the game.
 
 
 ## Why can't variable be used when declaring an array?
