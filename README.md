@@ -52,7 +52,7 @@ Game logic
    - Update snake's head position based on the current direction.
    - Snake's body and tail follow the head.
   
-   Coliision
+   Collision
    - If snake's head collides with wall(#), the game ends.
    - If snake's head collides with its body(o), the game ends.
 
