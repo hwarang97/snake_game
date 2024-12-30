@@ -40,6 +40,10 @@ int main()
 		}
 	}
 ```
+## What is difference between runtime and compile time?
+Compile time is process of build. When you make source code, it would be execuable by compile and linking. The period is called __compiletime__.
+After execuable is created, it can be executed. When it exectued, the executable is loaded to memory and performed by cpu. This period is called __runtime__.
+
 
 ## Why should i avoid using cls?
 To display the game screen, a while loop is used to repeatedly refresh the screen at regular intervals. This ensures the game updates dynamically, providing a smooth gameplay experience. However, the initial implementation using the cls command revealed significant performance issues.
@@ -71,9 +75,3 @@ while (1)
 
 ### __win cursor version__
 ![win_cursor-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/6a411d91-679c-41b5-8863-f3906439685a)
-
-
-
-## What is difference between runtime and compile time?
-Compile time is process of build. When you make source code, it would be execuable by compile and linking. The period is called __compiletime__.
-After execuable is created, it can be executed. When it exectued, the executable is loaded to memory and performed by cpu. This period is called __runtime__.
