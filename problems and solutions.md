@@ -40,7 +40,38 @@ int main()
 		}
 	}
 ```
-
 ## What is difference between runtime and compile time?
 Compile time is process of build. When you make source code, it would be execuable by compile and linking. The period is called __compiletime__.
 After execuable is created, it can be executed. When it exectued, the executable is loaded to memory and performed by cpu. This period is called __runtime__.
+
+
+## Why should i avoid using cls?
+To display the game screen, a while loop is used to repeatedly refresh the screen at regular intervals. This ensures the game updates dynamically, providing a smooth gameplay experience. However, the initial implementation using the cls command revealed significant performance issues.
+
+__Probelm__
+- The cls command requires the creation of a new shell (cmd.exe) process every time it is called.
+- This additional process creation and termination slow down the execution speed.
+- In a repetitive game loop, this performance bottleneck becomes particularly noticeable, leading to inefficiency.
+
+__Cause__
+- The system("cls") function does not directly clear the console from within the program. Instead, it invokes an external command (cmd.exe) to perform the operation, which adds unnecessary overhead.
+
+__Solution__
+- Replace system("cls") with a method that moves the console cursor to the desired position and overwrites the existing content.
+- In Windows, this can be achieved using the SetConsoleCursorPosition API, which efficiently moves the cursor to a specific coordinate within the console. This avoids the need for external process creation, significantly improving performance and providing a smoother user experience.
+
+```c
+while (1)
+{
+	//system("cls"); // slow
+	move_cursor_to_top();
+	draw_snake(board, &snake);
+	display_board(board);
+	Sleep(100);
+}
+```
+### __system("cls") version__   
+![wincls-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/2724430f-f0f9-4be8-9537-327f12b27034)
+
+### __win cursor version__
+![win_cursor-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/6a411d91-679c-41b5-8863-f3906439685a)
