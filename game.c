@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include "game.h"
 
 void initialize_board(char board[ROW][COL])
@@ -20,10 +21,16 @@ void initialize_board(char board[ROW][COL])
 }
 
 
-void initialize_snake(char board[ROW][COL])
+void initialize_snake(Snake *snake)
 {
-	board[ROW / 2][COL / 2] = '@';
-	board[ROW / 2][COL / 2 + 1] = 'o';
+	snake->length = 2;
+	snake->direction = 0;
+	snake->body[0].x = ROW / 2;
+	snake->body[0].y = COL / 2;
+	snake->body[0].value = '@';
+	snake->body[1].x = ROW / 2;
+	snake->body[1].y = COL / 2 + 1;
+	snake->body[1].value = 'o';
 }
 
 
@@ -40,6 +47,15 @@ void generate_feed(char board[ROW][COL])
 			break;
 		}
 	}
+}
+
+void draw_snake(char board[ROW][COL], Snake* snake)
+{
+	for (int i = 0; i < snake->length; i++)
+	{
+		board[snake->body[i].x][snake->body[i].y] = snake->body[i].value;
+	}
+
 }
 
 
