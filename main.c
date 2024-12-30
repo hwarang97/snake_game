@@ -15,8 +15,15 @@ int main()
 	initialize_snake(&snake);
 	
 	// display
-	draw_snake(board, &snake);
-	display_board(board);
+	while (1)
+	{
+		// system("cls"); // slow
+		move_cursor_to_top();
+		draw_snake(board, &snake);
+		display_board(board);
+		Sleep(100);
+	}
+	
 
 	return 0;
 

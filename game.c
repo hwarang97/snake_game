@@ -1,7 +1,10 @@
+#include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
+#include <Windows.h>
+
 #include "game.h"
+
 
 void initialize_board(char board[ROW][COL])
 {
@@ -48,6 +51,14 @@ void generate_feed(char board[ROW][COL])
 		}
 	}
 }
+
+
+void move_cursor_to_top() {
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD coord = { 0, 0 };
+	SetConsoleCursorPosition(hConsole, coord);
+}
+
 
 void draw_snake(char board[ROW][COL], Snake* snake)
 {

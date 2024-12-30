@@ -16,8 +16,14 @@ typedef struct
 } Snake;
 
 
+// init
 void initialize_board(char board[ROW][COL]);
 void initialize_snake(Snake *snake);
+
+// feed
 void generate_feed(char board[ROW][COL]);
+
+// display
+void move_cursor_to_top(void);
 void draw_snake(char board[ROW][COL], Snake *snake);
 void display_board(char board[ROW][COL]);
