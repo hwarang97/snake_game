@@ -1,5 +1,6 @@
 #define ROW 20
 #define COL 30
+#define KEY_ESC 27
 
 
 typedef struct
