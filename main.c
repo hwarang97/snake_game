@@ -46,6 +46,8 @@ int main()
 		{
 			if (_kbhit())
 			{
+				move_cursor(0, ROW + 2);
+				printf("                                            ");
 				is_paused = false;
 			}
 			continue;
@@ -79,8 +81,8 @@ int main()
 				switch (key)
 				{
 				case 'p':
-					printf("Game Puase\n");
-					printf("Press any key to resume");
+					move_cursor(0, ROW + 2);
+					printf("Game Puased, Press any key to resume");
 					is_paused = true;
 					break;
 				case KEY_ESC:
@@ -92,7 +94,7 @@ int main()
 		
 
 
-		move_cursor_to_top();
+		move_cursor(0, 0);
 		draw_snake(board, &snake);
 		display_board(board);
 		Sleep(100);
