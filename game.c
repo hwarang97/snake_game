@@ -53,9 +53,9 @@ void generate_feed(char board[ROW][COL])
 }
 
 
-void move_cursor_to_top() {
+void move_cursor(int x, int y) {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD coord = { 0, 0 };
+	COORD coord = { x, y };
 	SetConsoleCursorPosition(hConsole, coord);
 }
 

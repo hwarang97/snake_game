@@ -25,6 +25,6 @@ void initialize_snake(Snake *snake);
 void generate_feed(char board[ROW][COL]);
 
 // display
-void move_cursor_to_top(void);
+void move_cursor(int x, int y);
 void draw_snake(char board[ROW][COL], Snake *snake);
 void display_board(char board[ROW][COL]);
