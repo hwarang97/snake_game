@@ -75,3 +75,20 @@ while (1)
 
 ### __win cursor version__
 ![win_cursor-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/6a411d91-679c-41b5-8863-f3906439685a)
+
+## How can i manage game state message?
+```c
+switch (key)
+{
+case 'p':
+    printf("Game Puase\n");
+    printf("Press any key to resume");
+    is_paused = true;
+    break;
+case KEY_ESC:
+    printf("ESC");
+    break;
+}
+```
+![puasemessageremianproblem-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/bb7660b3-02b7-4130-b26e-84a768313223)
+
