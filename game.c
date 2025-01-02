@@ -1,4 +1,6 @@
+#include <conio.h>
 #include <time.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <Windows.h>
@@ -79,5 +81,56 @@ void display_board(char board[ROW][COL])
 			printf("%c", board[i][j]);
 		}
 		printf("\n");
+	}
+}
+
+
+void handle_puase(bool* is_paused)
+{
+	if (_kbhit())
+	{
+		move_cursor(0, ROW + 2);
+		printf("                                            ");
+		*is_paused = false;
+		_getch();
+	}
+}
+
+
+void handle_input(Snake* snake, bool* is_paused, bool* is_running)
+{
+	char key = _getch();
+	if (key == -32) // Special key
+	{
+		key = _getch();
+		switch (key)
+		{
+		case KEY_UP:
+			snake->direction = UP_DIRECTION;
+			break;
+		case KEY_DOWN:
+			snake->direction = DOWN_DIRECTION;
+			break;
+		case KEY_LEFT:
+			snake->direction = LEFT_DIRECTION;
+			break;
+		case KEY_RIGHT:
+			snake->direction = RIGHT_DIRECTION;
+			break;
+		}
+	}
+	else // ASCII code
+	{
+		switch (key)
+		{
+		case 'p':
+			move_cursor(0, ROW + 2);
+			printf("Game Puased, Press any key to resume");
+			*is_paused = true;
+			break;
+		case KEY_ESC:
+			*is_running = false;
+			break;
+		}
 	}
 }
