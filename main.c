@@ -32,8 +32,10 @@ int main()
 
 		// key input
 		if (_kbhit()) handle_input(&snake, &is_paused, &is_running);
-		
-		
+
+		// move snake
+		move_snake(&snake);
+
 		move_cursor(0, 0);
 		draw_snake(board, &snake);
 		display_board(board);
@@ -43,4 +45,3 @@ int main()
 	return 0;
 
 }
-

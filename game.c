@@ -55,6 +55,32 @@ void generate_feed(char board[ROW][COL])
 }
 
 
+void move_snake(Snake* snake)
+{
+	for (int i = 1; i < snake->length; i++)
+	{
+		snake->body[i].x = snake->body[i - 1].x;
+		snake->body[i].y = snake->body[i - 1].y;
+	}
+
+	switch (snake->direction)
+	{
+	case UP_DIRECTION:
+		snake->body[0].x -= 1;
+		break;
+	case DOWN_DIRECTION:
+		snake->body[0].x += 1;
+		break;
+	case LEFT_DIRECTION:
+		snake->body[0].y -= 1;
+		break;
+	case RIGHT_DIRECTION:
+		snake->body[0].y += 1;
+		break;
+	}
+}
+
+
 void move_cursor(int x, int y) {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD coord = { x, y };

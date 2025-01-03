@@ -40,6 +40,9 @@ void initialize_snake(Snake *snake);
 // feed
 void generate_feed(char board[ROW][COL]);
 
+// move
+void move_snake(Snake* snake);
+
 // display
 void move_cursor(int x, int y);
 void draw_snake(char board[ROW][COL], Snake *snake);
