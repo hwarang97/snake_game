@@ -92,3 +92,48 @@ case KEY_ESC:
 ```
 ![puasemessageremianproblem-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/bb7660b3-02b7-4130-b26e-84a768313223)
 
+## Simplify snake moving
+```c
+switch (snake.direction)
+{
+case UP_DIRECTION:
+	for (int i = 0; i < snake.length; i++)
+	{
+		snake.body[i].x -= 1;
+	}
+	break;
+case DOWN_DIRECTION:
+	for (int i = 0; i < snake.length; i++)
+	{
+		snake.body[i].x += 1;
+	}
+	break;
+case LEFT_DIRECTION:
+	for (int i = 0; i < snake.length; i++)
+	{
+		snake.body[i].y -= 1;
+	}
+	break;
+case RIGHT_DIRECTION:
+	for (int i = 0; i < snake.length; i++)
+	{
+		snake.body[i].y += 1;
+	}
+	break;
+}
+```
+```c
+void move_snake(Snake *snake) {
+    for (int i = snake->length - 1; i > 0; i--) {
+        snake->body[i] = snake->body[i - 1];
+    }
+
+    switch (snake->direction) {
+        case UP_DIRECTION:    snake->body[0].x -= 1; break;
+        case DOWN_DIRECTION:  snake->body[0].x += 1; break;
+        case LEFT_DIRECTION:  snake->body[0].y -= 1; break;
+        case RIGHT_DIRECTION: snake->body[0].y += 1; break;
+    }
+}
+```
+
