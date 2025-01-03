@@ -25,17 +25,17 @@ void initialize_board(char board[ROW][COL])
 	}
 }
 
-
 void initialize_snake(Snake *snake)
 {
 	snake->length = 2;
-	snake->direction = 0;
+	snake->direction = LEFT_DIRECTION;
 	snake->body[0].x = ROW / 2;
 	snake->body[0].y = COL / 2;
 	snake->body[0].value = '@';
 	snake->body[1].x = ROW / 2;
 	snake->body[1].y = COL / 2 + 1;
 	snake->body[1].value = 'o';
+
 }
 
 
@@ -57,7 +57,7 @@ void generate_feed(char board[ROW][COL])
 
 void move_snake(Snake* snake)
 {
-	for (int i = 1; i < snake->length; i++)
+	for (int i = snake->length - 1; i > 0; i--)
 	{
 		snake->body[i].x = snake->body[i - 1].x;
 		snake->body[i].y = snake->body[i - 1].y;
