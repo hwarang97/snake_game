@@ -25,17 +25,21 @@ void initialize_board(char board[ROW][COL])
 	}
 }
 
-void initialize_snake(Snake *snake)
+void initialize_snake(Snake *snake, int length)
 {
-	snake->length = 2;
+	snake->length = length;
 	snake->direction = LEFT_DIRECTION;
 	snake->body[0].x = ROW / 2;
 	snake->body[0].y = COL / 2;
 	snake->body[0].value = '@';
-	snake->body[1].x = ROW / 2;
-	snake->body[1].y = COL / 2 + 1;
-	snake->body[1].value = 'o';
 
+	for (int i = 1; i < snake->length; i++)
+	{
+		snake->body[i].x = ROW / 2;
+		snake->body[i].y = COL / 2 + i;
+		snake->body[i].value = 'o';
+	}
+	
 }
 
 

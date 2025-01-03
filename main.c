@@ -19,7 +19,8 @@ int main()
 
 	// initialize snake
 	Snake snake;
-	initialize_snake(&snake);
+	int length = 3;
+	initialize_snake(&snake, length);
 	
 	// display
 	bool is_paused = false;

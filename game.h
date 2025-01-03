@@ -35,7 +35,7 @@ typedef struct
 
 // init
 void initialize_board(char board[ROW][COL]);
-void initialize_snake(Snake *snake);
+void initialize_snake(Snake *snake, int length);
 
 // feed
 void generate_feed(char board[ROW][COL]);
