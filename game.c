@@ -81,6 +81,16 @@ void move_snake(Snake* snake)
 }
 
 
+void clear_tail(Snake* snake, char board[ROW][COL])
+{
+	int last_position = snake->length - 1;
+	int last_x = snake->body[last_position].x;
+	int last_y = snake->body[last_position].y;
+
+	board[last_x][last_y] = ' ';
+}
+
+
 void move_cursor(int x, int y) {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD coord = { x, y };

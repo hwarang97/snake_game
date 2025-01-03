@@ -33,6 +33,9 @@ int main()
 		// key input
 		if (_kbhit()) handle_input(&snake, &is_paused, &is_running);
 
+		// clear snake
+		clear_tail(&snake, board);
+
 		// move snake
 		move_snake(&snake);
 

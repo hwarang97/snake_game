@@ -42,6 +42,7 @@ void generate_feed(char board[ROW][COL]);
 
 // move
 void move_snake(Snake* snake);
+void clear_tail(Snake* snake, char board[ROW][COL]);
 
 // display
 void move_cursor(int x, int y);
