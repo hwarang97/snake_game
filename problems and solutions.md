@@ -137,3 +137,20 @@ void move_snake(Snake *snake) {
 }
 ```
 
+## Don Not Use Magic Number
+
+```python
+
+void initialize_snake(Snake *snake)
+{
+	snake->length = 2;
+	snake->direction = 0; # need to fix 
+	snake->body[0].x = ROW / 2;
+	snake->body[0].y = COL / 2;
+	snake->body[0].value = '@';
+	snake->body[1].x = ROW / 2;
+	snake->body[1].y = COL / 2 + 1;
+	snake->body[1].value = 'o';
+}
+```
+
