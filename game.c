@@ -174,3 +174,26 @@ void handle_input(Snake* snake, bool* is_paused, bool* is_running)
 		}
 	}
 }
+
+
+void check_collision(Snake* snake, char board[ROW][COL], bool* is_running)
+{
+	int head_x = snake->body[0].x;
+	int head_y = snake->body[0].y;
+
+	// collision with wall
+	if (board[head_x][head_y] == '#')
+	{
+		move_cursor(0, ROW + 2);
+		printf("Game Over! You hit the wall");
+		*is_running = false;
+	}
+
+	// collision with tail
+	if (board[head_x][head_y] == 'o')
+	{
+		move_cursor(0, ROW + 2);
+		printf("Game Over! Your ran into yourself");
+		*is_running = false;
+	}
+}
