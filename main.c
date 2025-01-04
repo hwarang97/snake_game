@@ -7,6 +7,9 @@
 #include "game.h"
 
 
+void grow_snake(Snake* snake, char board[ROW][COL]);
+
+
 int main() 
 {
 	// initialize board
@@ -40,6 +43,9 @@ int main()
 		// move snake
 		move_snake(&snake);
 
+		// grow
+		grow_snake(&snake, board);
+
 		// check collision
 		check_collision(&snake, board, &is_running);
 
@@ -51,4 +57,18 @@ int main()
 
 	return 0;
 
+}
+
+
+void grow_snake(Snake* snake, char board[ROW][COL])
+{
+	int head_x = snake->body[0].x;
+	int head_y = snake->body[0].y;
+
+	// grow
+	if (board[head_x][head_y] == '0')
+	{
+		snake->body[snake->length].value = 'o';
+		snake->length++;
+	}
 }

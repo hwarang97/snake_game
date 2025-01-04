@@ -61,7 +61,8 @@ void generate_feed(char board[ROW][COL])
 
 void move_snake(Snake* snake)
 {
-	for (int i = snake->length - 1; i > 0; i--)
+	// snake[snake->length] is element for grow
+	for (int i = snake->length; i > 0; i--)
 	{
 		snake->body[i].x = snake->body[i - 1].x;
 		snake->body[i].y = snake->body[i - 1].y;
