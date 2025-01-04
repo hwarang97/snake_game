@@ -52,4 +52,5 @@ void display_board(char board[ROW][COL]);
 // handle
 void handle_puase(bool* is_paused);
 void handle_input(Snake* snake, bool* is_paused, bool* is_running);
+void grow_snake(Snake* snake, char board[ROW][COL]);
 void check_collision(Snake* snake, char board[ROW][COL], bool* is_running);
