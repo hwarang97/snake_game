@@ -187,7 +187,9 @@ void grow_snake(Snake* snake, char board[ROW][COL])
 	{
 		snake->body[snake->length].value = 'o';
 		snake->length++;
+		generate_feed(board);
 	}
+	
 }
 
 
