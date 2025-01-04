@@ -2,6 +2,13 @@
 #define COL 30
 #define KEY_ESC 27
 
+// Symbol
+typedef enum {
+	FEED = '0',
+	HEAD = '@',
+	TAIL = 'o',
+	WALL = '#'
+} Symbol;
 
 // Arrow key
 typedef enum {

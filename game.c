@@ -15,7 +15,7 @@ void initialize_board(char board[ROW][COL])
 		for (int j = 0; j < COL; j++)
 		{
 			if ((i == 0) || (i == ROW - 1) || (j == 0) || (j == COL - 1)) {
-				board[i][j] = '#';
+				board[i][j] = WALL;
 			}
 			else
 			{
@@ -31,13 +31,13 @@ void initialize_snake(Snake *snake, int length)
 	snake->direction = LEFT_DIRECTION;
 	snake->body[0].x = ROW / 2;
 	snake->body[0].y = COL / 2;
-	snake->body[0].value = '@';
+	snake->body[0].value = HEAD;
 
 	for (int i = 1; i < snake->length; i++)
 	{
 		snake->body[i].x = ROW / 2;
 		snake->body[i].y = COL / 2 + i;
-		snake->body[i].value = 'o';
+		snake->body[i].value = TAIL;
 	}
 	
 }
@@ -52,7 +52,7 @@ void generate_feed(char board[ROW][COL])
 		int feed_col = rand() % COL;
 		if (board[feed_row][feed_col] == ' ')
 		{
-			board[feed_row][feed_col] = '0';
+			board[feed_row][feed_col] = FEED;
 			break;
 		}
 	}
@@ -183,9 +183,9 @@ void grow_snake(Snake* snake, char board[ROW][COL])
 	int head_y = snake->body[0].y;
 
 	// grow
-	if (board[head_x][head_y] == '0')
+	if (board[head_x][head_y] == FEED)
 	{
-		snake->body[snake->length].value = 'o';
+		snake->body[snake->length].value = TAIL;
 		snake->length++;
 		generate_feed(board);
 	}
@@ -199,7 +199,7 @@ void check_collision(Snake* snake, char board[ROW][COL], bool* is_running)
 	int head_y = snake->body[0].y;
 
 	// collision with wall
-	if (board[head_x][head_y] == '#')
+	if (board[head_x][head_y] == WALL)
 	{
 		move_cursor(0, ROW + 2);
 		printf("Game Over! You hit the wall");
@@ -207,7 +207,7 @@ void check_collision(Snake* snake, char board[ROW][COL], bool* is_running)
 	}
 
 	// collision with tail
-	if (board[head_x][head_y] == 'o')
+	if (board[head_x][head_y] == TAIL)
 	{
 		move_cursor(0, ROW + 2);
 		printf("Game Over! Your ran into yourself");
